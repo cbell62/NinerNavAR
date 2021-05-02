@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Chrome"/>
+    <title>UNCC Navigation</title>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="logic.js"></script>
+    
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+        vr-mode-ui="enabled: false"
+        embedded
+        arjs="sourceType: webcam; debugUIEnabled: true;"
+    >
+    
+        <!-- Asset Loading -->
+        <a-assets>
+          <a-asset-item id="medkit-obj" src="assets/Medkit.obj"></a-asset-item>
+          <a-asset-item id="medkit-mtl" src="assets/Medkit.mtl"></a-asset-item>
+          <a-asset-item id="owl-obj" src="assets/Robotic Owl.obj"></a-asset-item>
+          <a-asset-item id="owl-mtl" src="assets/Robotic Owl.mtl"></a-asset-item>
+        </a-assets>
+
+        <!-- Object placement -->
+        <a-entity id="chiOmegaOwl" obj-model="obj: #owl-obj;" gps-entity-place="latitude: 35.313327; longitude: -80.724874;"
+          scale="5 5 5"
+          rotation="0 200 0"
+          color="#ff000d">
+        </a-entity>
+
+        <a-octahedron id="redOctahedron"
+          gps-entity-place="latitude: 35.310678; longitude: -80.729825;" 
+          radius="5" color="#ff000d" 
+          scale="1 2 1"
+          wireframe=false wireframe-linewidth=50
+          height="100">
+        </a-octahedron>
+
+        <a-text
+          value="Student Health Center"
+          look-at="[gps-camera]"
+          scale="5 5 5"
+          position="0 0 10"
+          gps-entity-place="latitude: 35.310678; longitude: -80.729825;">
+        </a-text>
+
+        
+        <script>
+          console.log("ConsoleLog is working (☞ﾟヮﾟ)☞");
+          console.log(String(document.getElementById("pinkSphere")));
+
+          function hideMe(objectID) 
+          {
+              document.getElementById(objectID).setAttribute(visible,false);
+              console.log(objectID + " has been hidden");
+              return;
+          }
+        </script>
+
+        <!-- Camera -->
+        <a-camera gps-camera rotation-reader 
+        far="100000">
+      </a-camera>
+
+    </a-scene>
+  </body>
+</html>
