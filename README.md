@@ -1,3 +1,3 @@
-- **Jason Fomuke and Calista Bell's Project for RUHacks 2021 Hackathon**
+- **Jason Fomuke and Calista Bell's Project for RUHacks 2021 Hackathon (Apr 30 – May 2, 2021)**
 - **NinerNavAR is an Augumented Reality Application**
 - **Full Demo, Description, and more: [NinerNav](https://devpost.com/software/ninernav)**
